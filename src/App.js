@@ -24,8 +24,9 @@ class App extends Component {
             <Container>
                 <Title>This is a reactjs scaffolding</Title>
                 <Subtitle>
-                    Technology stack includes：react.js、styled-components、mobx,
-                    tools: parcel、yarn ...
+                    Technology stack
+                    includes：react.js、styled-components、mobx、graphql、parcel、yarn
+                    ...
                 </Subtitle>
             </Container>
         )

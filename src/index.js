@@ -1,23 +1,24 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { Provider } from "mobx-react"
+import { injectGlobal } from "styled-components"
+
 import App from "./App"
 
-import { injectGlobal } from "styled-components"
-import { Provider } from "mobx-react"
-
-const stores = {
-    a: 1,
-    b: 2
-}
 injectGlobal`
-    html{}
-    body{
-        margin:0;
-        padding:0;
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
 ReactDOM.render(
-    <Provider {...stores}>
+    <Provider>
         <App />
     </Provider>,
     document.getElementById("root")

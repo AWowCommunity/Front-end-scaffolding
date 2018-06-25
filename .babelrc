@@ -1,4 +1,21 @@
 {
+    "env": {
+        "development": {
+            "plugins": [
+                "transform-decorators-legacy",
+                "babel-plugin-styled-components",
+                "babel-plugin-transform-class-properties",
+                "babel-plugin-transform-object-rest-spread"
+            ]
+        },
+        "production": {
+            "plugins": [
+                "transform-decorators-legacy",
+                "babel-plugin-transform-class-properties",
+                "babel-plugin-transform-object-rest-spread"
+            ]
+        }
+    },
     "presets": [
         ["env", {
             "targets": {
@@ -6,11 +23,5 @@
             }
         }],
         "react"
-    ],
-    "plugins": [
-        "transform-decorators-legacy",
-        "babel-plugin-styled-components",
-        "babel-plugin-transform-class-properties",
-        "babel-plugin-transform-object-rest-spread"
     ]
 }

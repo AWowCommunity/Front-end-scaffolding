@@ -1,9 +1,0 @@
-{
-    "category": ["a", "b"],
-    "a": {
-        "text": "aaaa"
-    },
-    "b": {
-        "text": "bbbb"
-    }
-}
