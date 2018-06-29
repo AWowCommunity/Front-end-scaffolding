@@ -7,14 +7,10 @@ import App from "./App"
 
 injectGlobal`
     html {
-        height: 100%;
     }
     body {
-        height: 100%;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding:0;
     }
 `
 ReactDOM.render(
