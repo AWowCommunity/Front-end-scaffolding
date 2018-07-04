@@ -62,7 +62,16 @@ class CustomDropdown extends Component {
     return (
       <Manager>
         <Target>
-          <Button
+        <Button  simple onClick={this.handleClick}>
+        {buttonIcon !== undefined ? (
+              <this.props.buttonIcon
+                className={classes.buttonIcon}
+              />
+            ) : null}
+        {buttonText !== undefined ? buttonText : null}
+        {caret ? <b className={caretClasses} /> : null}
+        </Button>
+          {/* <Button
             aria-label="Notifications"
             aria-owns={open ? "menu-list" : null}
             aria-haspopup="true"
@@ -76,7 +85,7 @@ class CustomDropdown extends Component {
             ) : null}
             {buttonText !== undefined ? buttonText : null}
             {caret ? <b className={caretClasses} /> : null}
-          </Button>
+          </Button> */}
         </Target>
         <Popper
           placement={
