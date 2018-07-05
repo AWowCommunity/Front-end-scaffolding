@@ -1,12 +1,18 @@
 import React from "react"
+import Icon from "@material-ui/core/Icon"
+import styled from "styled-components"
 
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
+import CustomDropdown from "./CustomDropdown"
 
+const IconStyled = styled(Icon)`
+    margin-right:6px;
+`
 function KitDropdown({ ...props }) {
     return (
         <div>
             <CustomDropdown
-                buttonText="Regular"
+             buttonText={props.buttonText}
+             buttonIcon={() => <IconStyled>{props.buttonIcon}</IconStyled>}
                 dropdownList={[
                     "Action",
                     "Another action",
