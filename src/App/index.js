@@ -1,128 +1,67 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Dropdwon from "../Components/Dropdwon/KitDropdwon";
+import React, { Component, Fragment } from "react"
+import styled from "styled-components"
+import Header from "./header"
+import BG from "./bg5.jpg"
 
-import BG from "./bg5.jpg";
-
-const Container = styled.div`
-    background-image:url(${BG});
+const HeaderContainer = styled.div`
+    background-image: url(${BG});
     height: 100vh;
     background-position: 100% 100%;
     background-size: cover;
-}
-`;
-const Header = styled.div`
-  width: 100%;
-  height: 80px;
-  background-color: ${bgcolor => (bgcolor.isFixed ? "#03a9f4" : "")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: ${position => (position.isFixed ? "fixed" : "")};
-`;
-const WrapperBox = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const HeaderTitleBox = styled.div`
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-const HeaderTitle = styled.div`
-  width: 730px;
-  font-size: 53px;
-  font-weight: 700;
-  text-align: center;
-  color: #fff;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  margin: 20px 0;
-`;
-const HeaderSubTitle = styled.div`
-  font-size: 18px;
-  font-weight: 300;
-  color: #fff;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  margin: 10px 0;
-`;
-const LeftBox = styled.div`
-  width: 150px;
-  color: #fff;
-`;
-const RightBox = styled.div`
-  display: flex;
-`;
+    z-index: 1;
+    &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+`
 const Content = styled.div`
-  height: 300px;
-  background-color: #00bcd4;
-  display: flex;
-  justify-content: center;
-`;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+`
 const ContentPaper = styled.div`
-  width: 90%;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-`;
+    width: 90%;
+    height: 100%;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+        0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -150px;
+`
+const ContentPaperContainer = styled.div`
+    width: 80%;
+    margin: 0 auto;
+`
 const Footer = styled.div`
-  background-color: #009688;
-`;
+    background-color: #009688;
+`
 
 class App extends Component {
-    state = {
-        isFixed: false
-    };
-    componentDidMount() {
-        console.log(document.documentElement.offsetHeight)
-        window.addEventListener('scroll',()=>{
-            if (
-                document.documentElement.scrollTop >= 80 ||
-                document.body.scrollTop >= 80
-            ) {
-                this.setState({
-                    isFixed:true
-                })
-            }else{
-                this.setState({
-                    isFixed:false
-                })
-            }
-
-        })
-    }
     render() {
         return (
-            <Container>
-                <Header isFixed={this.state.isFixed}>
-                    <WrapperBox>
-                        <LeftBox>Material Kit PRO </LeftBox>
-                        <RightBox>
-                            <Dropdwon buttonText="Components" buttonIcon="apps" />
-                            <Dropdwon buttonText="Sections" buttonIcon="view_day" />
-                            <Dropdwon buttonText="Examples" buttonIcon="view_carousel" />
-                        </RightBox>
-                    </WrapperBox>
-                </Header>
-                <HeaderTitleBox>
-                    <HeaderTitle>
-                        It is easy to see a person's integrity in his fate
-          </HeaderTitle>
-                    <HeaderSubTitle>
-                        Life is full of noise and riots, but there is no point in it.
-          </HeaderSubTitle>
-                </HeaderTitleBox>
+            <Fragment>
+                <HeaderContainer>
+                    <Header />
+                </HeaderContainer>
                 <Content>
-                    <ContentPaper>内容</ContentPaper>
+                    <ContentPaper>
+                        <ContentPaperContainer>
+                            dsdsdfdsfdsf
+                        </ContentPaperContainer>
+                    </ContentPaper>
                 </Content>
-                {/* <Footer>底部</Footer> */}
-            </Container>
-        );
+                <Footer>底部</Footer>
+            </Fragment>
+        )
     }
 }
 
-export default App;
+export default App
