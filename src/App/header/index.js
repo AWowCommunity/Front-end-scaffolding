@@ -16,6 +16,7 @@ const Nav = styled.div`
     align-items: center;
     position: fixed;
     transition:.45s;
+    z-index:1;
 `
 const NavContainer = styled.div`
     width: 80%;
