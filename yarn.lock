@@ -1197,7 +1197,7 @@ react-swipeable-views-utils@^0.12.14:
 
 react-swipeable-views@^0.12.14:
   version "0.12.14"
-  resolved "http://registry.npm.taobao.org/react-swipeable-views/download/react-swipeable-views-0.12.14.tgz#71722be23491ef500c42e86bafb838d45a69ffe1"
+  resolved "https://registry.yarnpkg.com/react-swipeable-views/-/react-swipeable-views-0.12.14.tgz#71722be23491ef500c42e86bafb838d45a69ffe1"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.42"
     dom-helpers "^3.2.1"
