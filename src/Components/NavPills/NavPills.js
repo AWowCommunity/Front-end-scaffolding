@@ -48,7 +48,7 @@ class NavPills extends React.Component {
                     root: classes.root,
                     fixed: classes.fixed,
                     flexContainer: flexContainerClasses,
-                    indicator: classes.displayNone
+                    indicator: classes.displayNone,
                 }}
                 value={this.state.active}
                 onChange={this.handleChange}

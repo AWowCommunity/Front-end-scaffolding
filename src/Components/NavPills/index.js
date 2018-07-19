@@ -5,7 +5,8 @@ import NavPills from "./NavPills.js"
 function Example({ ...props }) {
     return (
         <NavPills
-            color="warning"
+            color="primary"
+            alignCenter={true}
             tabs={[
                 {
                     tabButton: "Profile",
