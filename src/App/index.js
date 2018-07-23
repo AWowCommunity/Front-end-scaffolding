@@ -29,7 +29,6 @@ const Content = styled.div`
 `;
 const ContentPaper = styled.div`
   width: 90%;
-  height: 100%;
   border-radius: 6px;
   background: #fff;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
@@ -37,6 +36,7 @@ const ContentPaper = styled.div`
   position: absolute;
   top: -150px;
   z-index: 2;
+  padding:0 0 30px 0;
 `;
 const ContentPaperContainer = styled.div`
   width: 80%;
