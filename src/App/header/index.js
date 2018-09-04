@@ -1,114 +1,70 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import Dropdwon from "../../Components/Dropdwon/KitDropdwon"
-import KitButton from '../../Components/Button/KitButton'
+import KitButton from "../../Components/Button/KitButton"
+import NavBar from "../../Components/Nav"
+import BG from "./bg5.jpg"
 
-const Container = styled.div`
-    z-index:2;
-    position: relative;
-`
-const Nav = styled.div`
-    width: 100%;
-    height: 80px;
-    background-color: ${bgcolor => (bgcolor.isFixed ? "#03a9f4" : "")};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    transition:.45s;
-    z-index:1;
-`
-const NavContainer = styled.div`
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
+const Container = styled.div``
 const HeaderTitleBox = styled.div`
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
 `
 const HeaderTitle = styled.div`
-    width: 730px;
-    font-size: 53px;
-    font-weight: 700;
-    text-align: center;
-    color: #fff;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    margin: 20px 0;
+  width: 730px;
+  font-size: 53px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  margin: 20px 0;
 `
 const HeaderSubTitle = styled.div`
-    font-size: 18px;
-    font-weight: 300;
-    color: #fff;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    margin: 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  margin: 10px 0;
 `
-const LeftBox = styled.div`
-    width: 150px;
-    color: #fff;
-`
-const RightBox = styled.div`
-    display: flex;
+const HeaderContainer = styled.div`
+  background-image: url(${BG});
+  height: 100vh;
+  background-position: 100% 100%;
+  background-size: cover;
+  z-index: 1;
+  padding-top: 80px;
+  &::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
 `
 class Header extends Component {
-    state = {
-        isFixed: false
-    }
-    componentDidMount() {
-        window.addEventListener("scroll", () => {
-            if (
-                document.documentElement.scrollTop >= 80 ||
-                document.body.scrollTop >= 80
-            ) {
-                this.setState({
-                    isFixed: true
-                })
-            } else {
-                this.setState({
-                    isFixed: false
-                })
-            }
-        })
-    }
-    render() {
-        return (
-            <Container>
-                <Nav isFixed={this.state.isFixed}>
-                    <NavContainer>
-                        <LeftBox>Material Kit PRO </LeftBox>
-                        <RightBox>
-                            <Dropdwon
-                                buttonText="Components"
-                                buttonIcon="apps"
-                            />
-                            <Dropdwon
-                                buttonText="Sections"
-                                buttonIcon="view_day"
-                            />
-                            <Dropdwon
-                                buttonText="Examples"
-                                buttonIcon="view_carousel"
-                            />
-                        </RightBox>
-                    </NavContainer>
-                </Nav>
-                <HeaderTitleBox>
-                    <HeaderTitle>
-                        It is easy to see a person's integrity in his fate
-                    </HeaderTitle>
-                    <HeaderSubTitle>
-                        Life is full of noise and riots, but there is no point
-                        in it.
-                    </HeaderSubTitle>
-                    <KitButton>READ MORE</KitButton>
-                </HeaderTitleBox>
-            </Container>
-        )
-    }
+  render() {
+    return (
+      <Container>
+        <NavBar />
+        <HeaderContainer>
+          <HeaderTitleBox>
+            <HeaderTitle>
+              It is easy to see a person's integrity in his fate
+            </HeaderTitle>
+            <HeaderSubTitle>
+              Life is full of noise and riots, but there is no point in it.
+            </HeaderSubTitle>
+            <KitButton>READ MORE</KitButton>
+          </HeaderTitleBox>
+        </HeaderContainer>
+      </Container>
+    )
+  }
 }
 
 export default Header

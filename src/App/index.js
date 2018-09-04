@@ -2,24 +2,8 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import Header from "./header";
 import NavPills from "../Components/NavPills/index";
-import BG from "./bg5.jpg";
 
-const HeaderContainer = styled.div`
-  background-image: url(${BG});
-  height: 100vh;
-  background-position: 100% 100%;
-  background-size: cover;
-  z-index: 1;
-  &::before {
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-`;
+
 const Content = styled.div`
   height: 300px;
   background-color: #fff;
@@ -50,9 +34,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <HeaderContainer>
-          <Header />
-        </HeaderContainer>
+        <Header />
         <Content>
           <ContentPaper>
             <ContentPaperContainer>
