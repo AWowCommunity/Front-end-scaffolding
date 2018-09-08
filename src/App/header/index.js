@@ -6,12 +6,13 @@ import BG from "./bg5.jpg"
 
 const Container = styled.div``
 const HeaderTitleBox = styled.div`
-  height: 100vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #000;
+  position: relative;
 `
 const HeaderTitle = styled.div`
   width: 730px;
